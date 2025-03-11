@@ -28,14 +28,6 @@
             margin-top: 15px;
             display: none;
         }
-        .whatsapp-link {
-            display: block;
-            margin-top: 20px;
-            font-size: 18px;
-            color: green;
-            text-decoration: none;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
@@ -46,26 +38,10 @@
 
         <!-- Countdown Timer -->
         <p class="countdown" id="countdown">Redirecting in <span id="timer">30</span> seconds...</p>
-
-        <!-- WhatsApp Button -->
-        <a id="whatsappLink" class="whatsapp-link" href="#" target="_blank">Contact on WhatsApp</a>
     </div>
 
     <script>
-        // WhatsApp Numbers List
-        const whatsappNumbers = [
-            "+919465361948",
-            "+916002535216",
-            "+6281772876288",
-            "+919530891775"
-        ];
-
-        // Randomly select a number
-        const randomNumber = whatsappNumbers[Math.floor(Math.random() * whatsappNumbers.length)];
-
-        // Generate WhatsApp link
-        const whatsappLink = `https://wa.me/${randomNumber}`;
-        document.getElementById("whatsappLink").href = whatsappLink;
+        const telegramLink = "https://t.me/SFAEarnings";
 
         setTimeout(startCountdown, 3000); // पेज लोड होने के 3 सेकंड बाद काउंटडाउन स्टार्ट होगा
 
@@ -81,7 +57,7 @@
 
                 if (timeLeft <= 0) {
                     clearInterval(countdownInterval);
-                    window.location.href = whatsappLink; // WhatsApp पर डायरेक्ट भेज देगा
+                    window.location.href = telegramLink;
                 }
             }, 1000);
         }
