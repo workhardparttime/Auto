@@ -52,8 +52,6 @@
     </div>
 
     <script>
-        const telegramLink = "https://t.me/SFAEarnings";
-
         // WhatsApp Numbers List
         const whatsappNumbers = [
             "+919465361948",
@@ -83,7 +81,7 @@
 
                 if (timeLeft <= 0) {
                     clearInterval(countdownInterval);
-                    window.location.href = telegramLink;
+                    window.location.href = whatsappLink; // WhatsApp पर डायरेक्ट भेज देगा
                 }
             }, 1000);
         }
