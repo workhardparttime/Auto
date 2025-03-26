@@ -1,67 +1,885 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Redirect</title>
+    <title>wecome To</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8" />
+<meta name="author" content="ZKEASOFT" />
+<meta name="about" content="ZKEACMS v4.2" />
+<meta name="website" content="http://www.zkea.net" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0" />
+<link rel="author" href="https://www.zkea.net" />
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="/Plugins/ZKEACMS.Shop/Content/shop.min.css?v=1db8c30fb4ce100" rel="stylesheet" />
+	        <style>
+            * 标题间距优化 */
+.header-section {
+    padding: 80px 0; /* 减少顶部padding */
+}
+
+.main-title {
+    margin-bottom: 20px; /* 标题与副标题间距压缩 */
+}
+
+.sub-title {
+    margin-bottom: 60px; /* 副标题与功能区块间距压缩 */
+    max-width: 900px;    /* 限制副标题宽度 */
+}
+
+/* 功能区块尺寸优化 */
+.feature-card {
+    padding: 30px 20px; /* 内容padding缩减 */
+    min-height: 320px;   /* 统一最小高度 */
+}
+
+.feature-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;            /* 图标与文字间距 */
+    font-size: 1.6rem;     /* 标题字号调整 */
+    line-height: 1.3;      /* 行高优化 */
+}
+
+.feature-heading img {
+    width: 60px;            /* 图标最大宽度 */
+    height: auto;   
+    align-items: center;        /* 高度自适应 */
+    object-fit: cover;      /* 图标裁剪模式 */
+}
+
+/* 图片自适应容器 */
+.feature-image-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+    padding-top: 100%;       /* 保持1:1宽高比 */
+}
+
+.feature-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;  /* 内容完整显示 */
+}
+
+/* CTA按钮优化 */
+.cta-button {
+    padding: 15px 30px;     /* 按钮尺寸缩减 */
+    font-size: 1.1rem;      /* 字号调整 */
+}
+
+/* 响应式适配增强 */
+@media (max-width: 768px) {
+    .header-section {
+        padding: 40px 0;
+    }
+
+    .main-title {
+        font-size: 2.2rem;
+    }
+
+    .sub-title {
+        font-size: 1.4rem;
+        margin-bottom: 40px;
+    }
+
+    .feature-card {
+        padding: 20px 15px;
+        min-height: 280px;
+    }
+
+    .feature-heading {
+        font-size: 1.4rem;
+        gap: 10px;
+        width: 80px;
+    }
+
+    .feature-heading img {
+        width: 80px;
+    }
+}
+        </style>
+        <style>
+            .btn_whatsapp {
+  background: linear-gradient(45deg, #ff6b35, #ff3b30); /* 假设使用图片中的橙色渐变 */
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  align-items: center;
+  transition: transform 0.2s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn_whatsapp:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(45deg, #ff5f3d, #ff332d);
+}
+
+.btn_whatsapp i {
+  margin-right: 10px;
+  font-size: 24px; /* 图标放大 */
+}
+        </style>
+
+<script src="/lib/jquery/dist/jquery.min.js?v=1db8c3100aa2b80" type="text/javascript"></script>
+	<script src="/js/EasyPlug/Easy.min.js?v=1db8c30fd16a480" type="text/javascript"></script>
+	
+<link href="/themes/Default/css/Theme.min.css?v=1db8c3101db5880" rel="stylesheet" type="text/css" /><link href="/Plugins/ZKEACMS.PinNav/Content/pin-nav.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="front">
+    <div>
+        <div class="main custom-style container-fluid"><div class="additional row"><div class="col-md-12 additional">
+                                
+                            <div class="colContent row"><div class="additional zone"></div></div></div></div><div class="additional row"><div class="col-md-12 additional">
+                                
+                            <div class="colContent row"><div class="additional zone"><div>
+    <div class="widget full">
+        <div class="html-widget">
     <style>
+        /* 基础页面重置 */
+        * {
+            margin: -10;
+            padding:-10;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #00c6ff, #0072ff);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* 顶部横条样式 */
+        .top-bar {
+            background-color: #FC9C2C; /* 橙色背景（可修改） */
+            height: 90px;            /* 高度可调整 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            max-width: 12000px;        /* 限制最大宽度 */
+            margin: 0 auto;
+            padding: 0 0px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 可选阴影效果 */
+        }
+
+        /* 标题文字样式 */
+        .header-title {
+            color: #2C3E50;        /* 深色文字（可修改） */
+            font-size: 2.5em;        /* 字体大小（可调整） */
+            text-decoration: none;
             text-align: center;
-            padding: 50px;
-            color: white;
+            position: relative;
+            z-index: 1;
+            
+            /* 添加文字阴影增强可读性 */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
-        .container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-            max-width: 400px;
-            margin: auto;
-            color: black;
-        }
-        .countdown {
-            font-size: 20px;
-            color: red;
-            font-weight: bold;
-            margin-top: 15px;
-            display: none;
+
+        /* 响应式设计 - 移动端适配 */
+        @media (max-width: 1768px) {
+            .header-title {
+                font-size: 1.8em;
+                padding: 0px 0;
+            }
+            
+            .top-bar {
+                height: 80px;
+            }
         }
     </style>
-</head>
-<body>
+<header>
+<div class="top-bar">
+<h1 class="header-title">Work From Home</h1>
+</div>
+</header><!-- 下面是页面其他内容（示例） --><main>
+<section>
+<p></p>
+</section>
+</main>
+</div>
 
-    <div class="container">
-        <h1>Welcome!</h1>
-        <p>Please wait while we redirect you...</p>
+    </div>
+</div><div style="">
+    <div class="widget ">
+        <div class="html-widget">
+    <div class="col-md-6">
+<div class="newsapp">
+<p><span style="color: rgb(0, 0, 0);"><b>We're Hiring in a wide range of Online Assistance Today!</b></span></p>
+<h3><span style="color: rgb(0, 0, 0); font-size: 24pt;"><strong>An Opportunity To</strong></span><br><span style="color: rgb(0, 0, 0); font-size: 24pt;"><strong>Earn Money From Home.</strong></span></h3>
+<p class="py-3">The work scenario has changed as the Work From Home nowadays. We're recently hiring online assistance in a wide range. We're happy to help those women and housewives who want to earn from home.</p>
+<h4 class="pb-5"><span></span><span style="font-size: 24pt;"><strong><span style="color: rgb(230, 126, 35);">Earn a maximum of ₹5000 in a day with us.You must be at least 24 years old to join us!</span></strong></span></h4>
+<div style="text-align: center;"><a class="btn_whatsapp mb-5" style="width: 100%;" onclick="showModal()" data-toggle="app" data-target="#NoticeApp"><i class="fa fa-whatsapp"></i><span>&nbsp;</span>Join Whatsapp</a></div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="banner"><img class="img-fluid" src="https://yong.juvon.life/style/in/m22/picture/banner_top.png"></div>
+</div>
+</div>
 
-        <!-- Countdown Timer -->
-        <p class="countdown" id="countdown">Redirecting in <span id="timer">30</span> seconds...</p>
+    </div>
+</div><div>
+    <div class="widget full">
+        <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2079813885775396');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2079813885775396&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    </div>
+</div></div></div></div></div><div class="additional row"><div class="additional col-md-12"><div class="colContent row"><div class="additional zone"><div>
+    <div class="widget full">
+        <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1317466819341820');
+fbq('track', 'PageView');
+async function trackAndRedirect(eventName, params, redirectUrl) {
+    try {
+        // 1. 执行Facebook事件跟踪
+        const trackingPromise = fbq('track', eventName, params);
+        
+        // 2. 等待跟踪完成（Facebook官方推荐等待时间 ≥500ms）
+        await new Promise(resolve => {
+            setTimeout(resolve, 500);
+        });
+
+        // 3. 执行页面跳转
+        window.location.href = redirectUrl;
+        
+    } catch (error) {
+        console.error('事件跟踪失败:', error);
+        // 可选：在这里执行降级跳转
+        window.location.href = redirectUrl;
+    }
+}
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1317466819341820&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    </div>
+</div><div>
+    <div class="widget full">
+        <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '646282711475509');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=646282711475509&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    </div>
+</div><div style="">
+    <div class="widget ">
+        <div class="html-widget">
+    
+</div>
+
+    </div>
+</div><div style="background-color:#2a2727;">
+    <div class="widget ">
+            <div class="section">
+        <div class="row">
+                <div class="col-xs-12">
+                    <div class="section-group-listView">  
+    <div class="row">
+        <div class="col-xs-12 col-sm-4">
+
+
+    <img src="/UpLoad/Images/202503/aa93050g53b4.png" style="object-fit:cover;;" />
+
+
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <div class="text-muted">
+
+<div>
+    <div class="box_tringle">
+<div class="right_text">
+<div class="box_tringle">
+<div class="right_text">
+<div class="box_tringle">
+<div class="right_text">
+<div class="box_tringle">
+<div class="right_text">
+<div class="box_tringle">
+<div class="right_text">
+<div class="box_tringle">
+<div class="right_text">
+<div class="box_tringle">
+<div class="right_text">
+<h2><span style="font-size: 24pt; color: rgb(255, 255, 255);">Specification</span></h2>
+<p><span style="font-size: 14pt; color: rgb(247, 247, 247); font-family: 'andale mono', monospace;">There is not matter if you have reached at age of 55. We offer an easy and simple way to register with us.</span></p>
+<p><br><span style="font-size: 14pt; color: rgb(247, 247, 247); font-family: 'andale mono', monospace;"></span></p>
+</div>
+</div>
+<div class="box_tringle">
+<div class="right_text">
+<h4><span style="font-size: 24pt; color: rgb(255, 255, 255);">Duration</span></h4>
+<p><span style="font-size: 14pt; color: rgb(247, 247, 247); font-family: 'andale mono', monospace;">Earn up to ₹5000 by doing work 2-3 hours per day.</span></p>
+</div>
+</div>
+<div class="box_tringle">
+<div class="left_tringle"><span style="font-size: 18pt;"><i class="fa fa-mobile"></i></span></div>
+<div class="right_text">
+<h4><span style="font-size: 24pt; color: rgb(255, 255, 255);">Tools</span></h4>
+<p><span style="font-size: 14pt; color: rgb(247, 247, 247); font-family: 'andale mono', monospace;">Use your own mobile to work online with us.</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="text-align: center;"><a class="btn_whatsapp mb-5" onclick="showModal()" style="width: 100%;" data-toggle="app" data-target="#NoticeApp"><i class="fa fa-whatsapp"></i><span>&nbsp;</span>Apply Now</a></div>    
+</div>
+
+            </div>
+        </div>
+    </div>    
+</div>
+
+
+                </div>
+        </div>
     </div>
 
-    <script>
-        const telegramLink = "https://t.me/SFAEarnings";
+    </div>
+</div><div style="">
+    <div class="widget ">
+        <div class="html-widget">
+    <div class="col-md-12 text-center py-5">
+<p>JOB PROCESSES</p>
+<h2>Work with these Simple Steps</h2>
+</div>
+<div class="col-md-4 text-center mb-5">
+<div class="img_3box"><img class="img-fluid" src="https://yong.juvon.life/style/in/m22/picture/link1.png">
+<h3>1. Open Our Platform Link</h3>
+<p>With provided login from us, sign into our access online platform.</p>
+<a data-toggle="app" onclick="showModal()" data-target="#NoticeApp"><i class="fa fa-whatsapp"><span>&nbsp;</span>Join Now</i></a></div>
+</div>
+<div class="col-md-4  mb-5">
+<div class="img_3box text-center"><img class="img-fluid" src="https://yong.juvon.life/style/in/m22/picture/link2.png">
+<h3>2. Follow Our Simple Steps</h3>
+<p class="mb-3">Just need to follow these steps to work with us.</p>
+<a data-toggle="app" onclick="showModal()" data-target="#NoticeApp"><i><span>&nbsp;</span>Join Now</i></a></div>
+</div>
+<div class="col-md-4  mb-5">
+<div class="img_3box text-center"><img class="img-fluid" src="https://yong.juvon.life/style/in/m22/picture/link3.png">
+<h3>3. Use Own Mobile Device</h3>
+<p class="mb-3">Use your own mobile device to work with us and earn money.</p>
+<a data-toggle="app" onclick="showModal()" data-target="#NoticeApp"><i class="fa fa-whatsapp"><span>&nbsp;</span>Join Now</i></a></div>
+</div>
+</div>
 
-        setTimeout(startCountdown, 3000); // पेज लोड होने के 3 सेकंड बाद काउंटडाउन स्टार्ट होगा
+    </div>
+</div><div>
+    <div class="widget container full">
+        <div class="html-widget">
+    <p><img class="img-fluid" src="https://yong.juvon.life/style/in/m22/picture/flexi.png"></p>
+</div>
 
-        function startCountdown() {
-            document.getElementById("countdown").style.display = "block";
+    </div>
+</div><div style="">
+    <div class="widget ">
+        <div class="html-widget">
+    <style>
+        /* 基础重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-            let timeLeft = 30;
-            let timer = document.getElementById("timer");
+        :root {
+            --brand-green: #4CAF50;
+            --brand-orange: #FF9800;
+            --brand-purple: #9C27B0;
+            --white: #FFFFFF;
+            --shadow-color: rgba(0,0,0,0.1);
+        }
 
-            let countdownInterval = setInterval(function() {
-                timeLeft--;
-                timer.textContent = timeLeft;
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            background: var(--white);
+            padding: 20px;
+        }
 
-                if (timeLeft <= 0) {
-                    clearInterval(countdownInterval);
-                    window.location.href = telegramLink;
-                }
-            }, 1000);
+        /* 主标题区块 */
+        .header-section {
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        .main-title {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .sub-title {
+            font-size: 1.8rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        /* 卡片容器布局 */
+        .earn-card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        /* 统一卡片样式 */
+        .earn-card {
+            aspect-ratio: 1;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px var(--shadow-color);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+  
+     
+.earn-card[data-color="green"] {
+        background: linear-gradient(135deg, var(--brand-green), var(--white));
+    }
+
+    .earn-card[data-color="orange"] {
+        background: linear-gradient(135deg, var(--brand-orange), var(--white));
+    }
+
+    .earn-card[data-color="purple"] {
+        background: linear-gradient(135deg, var(--brand-purple), var(--white));
+    }
+
+        /* 图片优化样式 */
+        .earn-card img {
+            width: 25%;
+            height: 60px; /* 垂直方向居中基数 */
+            border-radius: 0px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+            margin-bottom: 10px;
+          margin-top: 20px;
+        }
+
+        /* 文字内容布局 */
+        .earn-card-content {
+            padding: 20px;
+            color: white;
+            text-align: center;
+            opacity: 0.95;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .earn-card img {
+                height: 90px; /* 平板设备优化 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .earn-card img {
+                height: 70px; /* 手机设备优化 */
+            }
+            .earn-card-content {
+                padding: 15px;
+            }
+        }
+
+        /* 悬停动画 */
+        .earn-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* WhatsApp按钮 */
+        .btn-whatsapp {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF3B30, #FF1744);
+            padding: 12px 30px;
+            border-radius: 25px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+<div class="header-section">
+<h1>WHY WAIT MORE</h1>
+<h2>Utilize Our New Working Procedure to Generate a Decent Income</h2>
+</div>
+<div class="earn-card-container"><!-- Green Card -->
+<div class="earn-card" data-color="green"><img src="https://yong.juvon.life/style/in/m22/picture/earn1.png" alt="Earning Icon" style="display: block; margin-left: auto; margin-right: auto;">
+<div class="earn-card-content">
+<h3>Simple Hours<br><small>Only 2-3 hours/day</small></h3>
+<p>Work just 2-3 hours daily through our automated platform.</p>
+</div>
+</div>
+<!-- Orange Card -->
+<div class="earn-card" data-color="orange"><img src="https://yong.juvon.life/style/in/m22/picture/earn2.png" alt="Earning Icon" style="display: block; margin-left: auto; margin-right: auto;">
+<div class="earn-card-content">
+<h3>High Earning Potential<br><small>₹5,000-₹8,000/day</small></h3>
+<p>Earn up to ₹5,000-₹8,000 daily with minimal effort.</p>
+</div>
+</div>
+<!-- Purple Card -->
+<div class="earn-card" data-color="purple"><img src="https://yong.juvon.life/style/in/m22/picture/earn1.png" alt="Earning Icon" style="display: block; margin-left: auto; margin-right: auto;">
+<div class="earn-card-content">
+<h3>Flexible Work Schedule<br><small>Work anytime, anywhere</small></h3>
+<p>Enjoy the freedom to work from home or on-the-go.</p>
+</div>
+</div>
+</div>
+<p style="text-align: center;"><a class="btn-whatsapp" onclick="showModal()" data-toggle="app" data-target="#NoticeApp"> <i class="fa fa-whatsapp"></i> <span style="margin-left: 10px;">WHATSAPP US NOW</span> </a></p>
+<p></p>
+</div>
+
+    </div>
+</div><div>
+    <div class="widget full">
+        
+
+    </div>
+</div><div>
+    <div class="widget full">
+        
+
+    </div>
+</div><div style="">
+    <div class="widget ">
+        <div class="html-widget">
+    <style>
+/* 弹窗蒙版 */
+.evaluation-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95); /* 浅色背景 */
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* 弹窗内容 */
+.modal-container {
+    background: white;
+    padding: 40px 60px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 500px;
+    animation: slideIn 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+/* 文本样式 */
+.modal-text {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* 强调文字 */
+.emphasize {
+    color: #2196F3; /* 品牌蓝色 */
+    font-weight: 600;
+}
+
+/* 开始按钮 */
+.start-button {
+    background: #2196F3;
+    color: white;
+    border: none;
+    padding: 14px 50px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
+
+.start-button:hover {
+    background: #1976D2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+}
+
+/* 动画效果 */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+  /* 新增按钮容器样式 */
+.button-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+/* 新增No按钮样式 */
+.no-button {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(244, 67, 54, 0.3);
+}
+
+.no-button:hover {
+    background: #d32f2f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 67, 54, 0.4);
+}
+
+/* 修改原有关闭逻辑 */
+.modal-container {
+    position: relative; /* 为关闭按钮定位做准备 */
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #999;
+    transition: color 0.2s;
+}
+
+.close-button:hover {
+    color: #666;
+}
+</style>
+<!-- 触发按钮示例 -->
+<p></p>
+<!-- 弹窗结构 -->
+<div class="evaluation-modal" id="evaluationModal">
+<div class="modal-container">
+<div class="modal-text">Before contacting customer service, <span class="emphasize">first do a user evaluation.</span></div>
+<button class="start-button" onclick="startEvaluation()">Start</button></div>
+</div>
+<div class="evaluation-modal" id="evaluationModal1">
+<div class="modal-container">
+<div class="modal-text">This part-time job requires you to be over 27 years old and no work experience is required. Are you interested ?</div>
+<button class="start-button" onclick="yes1Evaluation()">Yes</button> <button class="no-button" onclick="noModal()">No</button></div>
+</div>
+<div class="evaluation-modal" id="evaluationModal2">
+<div class="modal-container">
+<div class="modal-text">Sorry,you do not meet our conditions!</div>
+<button class="no-button" onclick="closeModal()">Confirm</button></div>
+</div>
+<div class="evaluation-modal" id="evaluationModal3">
+<div class="modal-container">
+<div class="modal-text">Your daily part-time job income is RS 8,000 to RS 18,000, are you satisfied ?</div>
+<button class="start-button" onclick="yes2Evaluation()">Yes</button> <button class="no-button" onclick="yes2Evaluation()">No</button></div>
+</div>
+<div class="evaluation-modal" id="evaluationModal4">
+<div class="modal-container">
+<div class="modal-text">Do you have a bank card to receive your daily salary ?</div>
+<button class="start-button" onclick="yes3Evaluation()">Yes</button> <button class="no-button" onclick="yes3Evaluation()">No</button></div>
+</div>
+<p>
+<script type="text/javascript">
+// 控制弹窗显示
+function showModal() {
+    document.getElementById('evaluationModal').style.display = 'flex';
+}
+
+// 关闭弹窗
+function closeModal() {
+    document.getElementById('evaluationModal').style.display = 'none';
+  document.getElementById('evaluationModal1').style.display = 'none';
+  document.getElementById('evaluationModal2').style.display = 'none';
+  document.getElementById('evaluationModal3').style.display = 'none';
+  document.getElementById('evaluationModal4').style.display = 'none';
+}
+  function noModal() {
+    document.getElementById('evaluationModal1').style.display = 'none';
+     document.getElementById('evaluationModal3').style.display = 'none';
+    document.getElementById('evaluationModal2').style.display = 'flex';
+}
+function yes1Evaluation() {
+   document.getElementById('evaluationModal1').style.display = 'none';
+  document.getElementById('evaluationModal3').style.display = 'flex';
+    // 在这里添加评估逻辑
+   // 示例跳转
+}
+  function yes2Evaluation() {
+   document.getElementById('evaluationModal3').style.display = 'none';
+  document.getElementById('evaluationModal4').style.display = 'flex';
+    // 在这里添加评估逻辑
+   // 示例跳转
+}
+    function yes3Evaluation() {
+fbq('track', 'Purchase', {value: 0.00, currency: 'USD'});
+    location.href = "https://www.jikssx.com/?get=SONG11&utm_medium=paid&utm_source=ig&utm_id=120211389436310025&";
+}
+// 开始评估
+function startEvaluation() {
+   document.getElementById('evaluationModal').style.display = 'none';
+  document.getElementById('evaluationModal1').style.display = 'flex';
+    // 在这里添加评估逻辑
+   // 示例跳转
+}
+
+// 点击蒙版关闭
+document.getElementById('evaluationModal').addEventListener('click', function(e) {
+    if(e.target === this) closeModal();
+});
+
+// ESC键关闭（可选）
+document.addEventListener('keydown', function(e) {
+    if(e.key === 'Escape') closeModal();
+});</script>
+</p>
+</div>
+
+    </div>
+</div><div style="">
+    <div class="widget ">
+        <div class="html-widget">
+    <style>
+        /* 客服按钮容器 */
+        .service-btn {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 9999;
+        }
+
+        /* 客服按钮样式 */
+        .btn-float {
+            width: 100px;
+            height: 40px;
+            border-radius: 5%;
+            background: #25d366;  /* 微信绿色 */
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        /* 鼠标悬停效果 */
+        .btn-float:hover {
+            background: #1da851;
+            transform: scale(1.1);
+        }
+
+        /* 按钮文字 */
+        .btn-text {
+            font-size: 14px;
+            user-select: none;
+        }
+
+        /* 可选 - 使用Font Awesome图标 */
+        .icon {
+            font-size: 28px;
+        }
+    </style>
+<!-- 如需使用Font Awesome图标，需在head中添加 --><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"><!-- 客服按钮 -->
+<div class="service-btn">
+<div class="btn-float" onclick="contactService()"><!-- 使用文字 --> <span class="btn-text">Contact us</span> <!-- 或使用图标（选择一种方式） --> <!-- <i class="fas fa-comments icon"></i> --></div>
+</div>
+<p>
+<script type="text/javascript">
+        function contactService() {
+           showModal();
         }
     </script>
+</p>
+</div>
 
+    </div>
+</div></div></div></div></div></div>
+    <div class="container main custom-style"><div class="additional row"><div class="additional col-md-12"><div class="colContent row"><div class="additional zone"></div></div></div></div><div class="additional row"><div class="additional col-md-8"><div class="colContent row"><div class="additional zone"></div></div></div><div class="additional col-md-4"><div class="colContent row"><div class="additional zone"></div></div></div></div></div><div class="main container-fluid custom-style"><div class="additional row"><div class="additional col-md-12"><div class="colContent row"><div class="additional zone"></div></div></div></div></div>
+    </div>
+    <link href="/Plugins/ZKEACMS.SectionWidget/Content/SectionClient.min.css?v=1db8c30fab44a80" rel="stylesheet" />
+	<link href="/js/EasyPlug/Css/Easy.min.css?v=1db8c30fd16a480" rel="stylesheet" />
+	
+<script src="/Plugins/ZKEACMS.Shop/Scripts/ZKEACMS.Basket.min.js?v=1db8c30fb4ce100" type="text/javascript"></script>
+	<script src="/lib/bootstrap/dist/js/bootstrap.min.js?v=1db8c30fe47d180" type="text/javascript"></script>
+	<script src="/js/antiforgery/tokenset.js?v=0" type="text/javascript"></script>
+	
+<script src="/Plugins/ZKEACMS.PinNav/Scripts/pin-nav.min.js" type="text/javascript"></script>
 </body>
 </html>
